@@ -175,51 +175,55 @@ function App() {
     return matchesSearch;
   });
 
+  // ================= LOGIN / REGISTER UI =================
   if (!isLoggedIn) {
     return (
       <div className="auth-container">
-        <h2>{isRegisterMode ? 'Register' : 'Login'}</h2>
-        <form onSubmit={isRegisterMode ? handleRegister : handleLogin}>
-          {isRegisterMode && (
+        <div className="auth-card">
+          <h2>{isRegisterMode ? 'Create Account 🚀' : 'Welcome Back 👋'}</h2>
+          <form onSubmit={isRegisterMode ? handleRegister : handleLogin} className="auth-form">
+            {isRegisterMode && (
+              <input
+                type="text"
+                placeholder="Full Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            )}
             <input
-              type="text"
-              placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              type="email"
+              placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
-          )}
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit" className="btn-primary">
-            {isRegisterMode ? 'Register' : 'Login'}
-          </button>
-        </form>
-        <p style={{ marginTop: '15px', textAlign: 'center' }}>
-          {isRegisterMode ? 'Already have an account?' : "Don't have an account?"}{' '}
-          <span
-            onClick={() => setIsRegisterMode(!isRegisterMode)}
-            className="link-text"
-          >
-            {isRegisterMode ? 'Login here' : 'Register here'}
-          </span>
-        </p>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button type="submit" className="btn-primary" style={{ width: '100%', marginTop: '5px' }}>
+              {isRegisterMode ? 'Register' : 'Login'}
+            </button>
+          </form>
+          <p style={{ marginTop: '20px', textAlign: 'center', fontSize: '14px', color: '#64748b' }}>
+            {isRegisterMode ? 'Already have an account?' : "Don't have an account?"}{' '}
+            <span
+              onClick={() => setIsRegisterMode(!isRegisterMode)}
+              className="link-text"
+            >
+              {isRegisterMode ? 'Login here' : 'Register here'}
+            </span>
+          </p>
+        </div>
       </div>
     );
   }
 
+  // ================= TASK DASHBOARD UI =================
   return (
     <div className="dashboard-container">
       <div className="header-row">

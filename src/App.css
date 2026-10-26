@@ -9,11 +9,76 @@ body {
   box-sizing: border-box;
 }
 
-/* White Card Container */
+/* --- Authentication Card & Container Styles --- */
+.auth-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff !important;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.auth-card h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: #0f172a;
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-form input {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff !important;
+  color: #0f172a !important;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.auth-form input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.auth-form input:focus {
+  border-color: #4f46e5;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.link-text {
+  color: #4f46e5;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.link-text:hover {
+  text-decoration: underline;
+}
+
+/* White Card Container (Dashboard) */
 .dashboard-container {
   max-width: 680px;
   margin: 0 auto;
-  background: #ffffff !important; /* Pure crisp white background */
+  background: #ffffff !important;
   padding: 32px;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
@@ -220,8 +285,8 @@ button:hover {
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   font-size: 14px;
-  background-color: #ffffff; /* Solid white background */
-  color: #1e293b; /* Dark text color taaki saaf dikhe */
+  background-color: #ffffff;
+  color: #1e293b;
   outline: none;
   cursor: pointer;
 }
